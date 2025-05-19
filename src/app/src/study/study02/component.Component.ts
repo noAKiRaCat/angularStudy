@@ -6,7 +6,6 @@ import {study02SubComponent} from './study02Sub/study02Sub.Component';
   templateUrl: './component.Component.html',
   styleUrl: './component.Component.css',
   // コンポーネントの使用
-  imports: [study02SubComponent, study02SubComponent]
 })
 
 export class ComponentComponent {
