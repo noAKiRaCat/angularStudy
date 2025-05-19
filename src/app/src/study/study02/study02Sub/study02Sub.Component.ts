@@ -2,7 +2,7 @@
 import {
   booleanAttribute,
   Component,
-  computed,
+  computed, Input,
   input, model,
   numberAttribute,
   ViewEncapsulation
@@ -29,5 +29,29 @@ export class study02SubComponent {
 
   valueAlias = input(0, {alias: 'sliderValue'});
 
-  checker = model(false)
+  checker = model(false);
+
+  // use @input()
+  @Input() inputValue = 1;
+
+  @Input({required:true}) InputValueRequired = 0;
+
+  @Input({'alias':'al'}) InputValueAlias = 0;
+
+  // getter setter
+  @Input()
+  get getInputValue():number {
+    return this.internalGetValue;
+  }
+  set getInputValue(newValue:number) {this.internalGetValue = newValue;}
+  private internalGetValue:number = 0;
+
+  @Input()
+  set setInputValue(newValue:number) {
+    this.internalSetValue = newValue
+  }
+  private internalSetValue:number = 0;
+
+
+  // カスタムイベントと出力
 }
